@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Html Written by js</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div id = "contain">
+        
+    </div>
+    <button id = "addBtn" class="btn btn-info" onclick="add()">Show Element</button>
+    <div id = "contain2" class="container">
+        
+    </div>
+    
+    <script>
+        /// First Div Content And Style///
+        let showHead = document.createElement("h3")
+        let showText = document.createTextNode("Press the button to know the current date !")
+        showHead.appendChild(showText);
+        document.getElementById("contain").append(showHead);
+        showHead.classList.add("mt-5" ,"text-center");
+
+        /// BTN classes ///
+        btnStyle = document.getElementById("addBtn");
+        btnStyle.classList.add("mx-auto" , "d-block");
+        btnStyle.classList.add("mt-5");
+        
+        function add()
+        {
+            
+            /// Second Div Content ///
+            let pa = document.createElement("p");
+            let date = new Date().toString();
+            let text = document.createTextNode(date);
+            pa.appendChild(text);
+            pa.classList.add("bg-light" , "p-5" , "mt-5");
+            
+            divInner = document.getElementById("contain2");
+            if(divInner.innerHTML)
+            {
+                divInner.innerHTML="";
+            }
+            
+            document.getElementById("contain2").append(pa);
+               
+        }
+        
+        
+    </script>
+    
+</body>
+</html>
